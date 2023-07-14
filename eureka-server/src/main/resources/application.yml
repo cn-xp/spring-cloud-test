@@ -1,0 +1,15 @@
+server:
+  #���ж˿�
+  port: 8888
+eureka:
+  instance:
+    #ע��ip
+    hostname: localhost
+  client:
+    #��ֹ�Լ���������ע��
+    register-with-eureka: false
+    #����ע����Ϣ
+    fetch-registry: false
+    #ע��url
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

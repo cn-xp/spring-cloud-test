@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: nacos-config
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        file-extension: yaml
+        prefix: nacos-config
+        namespace: f831d210-43f9-402e-bb77-62db5b278658
+        group: SPRING-CLOUD-TEST
+server:
+  port: 18084
