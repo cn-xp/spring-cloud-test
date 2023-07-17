@@ -1,9 +1,12 @@
+eureka:
+  client:
+    serviceUrl:
+      #服务注册地址
+      defaultZone: http://localhost:8888/eureka/
 spring:
   application:
     name: gateway
   cloud:
-    nacos:
-      server-addr: 127.0.0.1:8848
     gateway:
       discovery:
         locator:
@@ -11,13 +14,13 @@ spring:
           lower-case-service-id: true
       routes:
         - id: provider
-          uri: lb://provider
+          uri: lb://service-provider
           predicates:
             - Path=/provider/**
           filters:
             - StripPrefix=1
         - id: consumer
-          uri: lb://consumer
+          uri: lb://service-consumer
           predicates:
             - Path=/consumer/**
           filters:
