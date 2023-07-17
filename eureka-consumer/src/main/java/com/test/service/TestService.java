@@ -1,5 +1,6 @@
 package com.test.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.test.model.Test;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

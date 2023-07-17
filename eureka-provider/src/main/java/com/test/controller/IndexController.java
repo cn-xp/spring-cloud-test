@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 @RestController
 @RequestMapping("/index")
 public class IndexController {
@@ -17,5 +19,15 @@ public class IndexController {
     @GetMapping("/index")
     public Test getTest(String id) {
         return this.testService.getTest(id);
+    }
+
+    @GetMapping("/timeout")
+    public String timeout()  {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        }catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "hello";
     }
 }
